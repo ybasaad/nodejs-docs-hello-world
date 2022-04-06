@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                sh 'docker stop helloworld && docker rm helloworld'
+                sh 'docker rmi $(docker images -a -q)'
             }
         }
       stage('Build') {
