@@ -11,12 +11,12 @@ pipeline {
         }
       stage('Build') {
             steps {
-                sh 'docker build --tag helloworld:$BUILD_NUMBER .'
+                sh 'docker build --tag yousef-helloworld:$BUILD_NUMBER .'
             }
         }
         stage('Test') {
             steps {
-                sh 'docker run --name helloworld -p 1444:1337 helloworld:$BUILD_NUMBER node /var/www/index.js &'
+                sh 'docker run --name yousef-helloworld -p 1444:1337 yousef-helloworld:$BUILD_NUMBER node /var/www/index.js &'
             }
         }
         stage('Login') {
@@ -26,7 +26,7 @@ pipeline {
         }
       stage('Tag') {
             steps {
-                sh 'docker tag helloworld:$BUILD_NUMBER ybasaad/hk-helloworld:$BUILD_NUMBER'
+                sh 'docker tag yousef-helloworld:$BUILD_NUMBER ybasaad/yousef-helloworld:$BUILD_NUMBER'
             }
         }
         stage('Push') {
