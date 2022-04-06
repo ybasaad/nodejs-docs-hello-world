@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Clean') {
             steps {
-                sh 'docker rmi $(docker images -a -q)'
+                sh 'docker rm -f $(docker ps -a -q)'
             }
         }
       stage('Build') {
