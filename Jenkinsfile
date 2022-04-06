@@ -7,7 +7,6 @@ pipeline {
         stage('Clean') {
             steps {
                 sh 'docker stop helloworld && docker rm helloworld'
-                sh 'docker rm hamzhkoujan/hk-helloworld'
             }
         }
       stage('Build') {
