@@ -13,7 +13,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'docker run --name yousef-helloworld -p 11444:1337 yousef-helloworld:$BUILD_NUMBER node /var/www/index.js &'
+                sh 'docker run --name yousef-helloworld -p 1337:1444 yousef-helloworld:$BUILD_NUMBER node /var/www/index.js &'
             }
         }
         
